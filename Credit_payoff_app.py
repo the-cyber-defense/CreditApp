@@ -143,7 +143,9 @@ if user_debts:
         st.markdown(f"**Debt Payment:** {percent_debt:.1f}%  \n**Remaining Income:** {percent_remaining:.1f}%")
         
         pie_data = pd.Series([percent_debt, percent_remaining], index=["Debt Payment", "Remaining Income"])
-        st.pyplot(pie_data.plot.pie(autopct='%1.1f%%', figsize=(5, 5), ylabel=""))
+        fig_pie, ax_pie = plt.subplots(figsize=(5, 5))
+        pie_data.plot.pie(autopct='%1.1f%%', ylabel="", ax=ax_pie)
+        st.pyplot(fig_pie)
 
     col3, col4 = st.columns(2)
     with col3:
