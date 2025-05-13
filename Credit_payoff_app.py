@@ -99,7 +99,7 @@ if use_profile:
         with col2:
             debt["apr"] = st.number_input(f"{debt['name']} APR (%)", min_value=0.0, max_value=50.0, value=debt["apr"], step=0.25, key=f"apr_{debt['name']}")
 else:
-    default_names = ["Redwood CU Personal", "Amex Business", "Apple Card", "Venmo", "Capital One"]
+    default_names = ["Personal", "Amex", "Apple Card", "Venmo", "Capital One"]
     user_debts = []
     for name in default_names:
         col1, col2 = st.columns(2)
